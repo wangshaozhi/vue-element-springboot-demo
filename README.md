@@ -8,4 +8,4 @@ vue-element-springboot-demo
 + 实现了权限控制
 + 实现了基本后台管理的框架，包含三级菜单
 ### 详细介绍，参照下面博客
-+ 
++ https://blog.csdn.net/weixin_41357783/article/details/108035964
