@@ -71,7 +71,7 @@ export default {
           this.$api.loginApi
             .login(this.loginForm.username, this.loginForm.password)
             .then(res => {
-              if (res && res.data.code == 200) {
+              if (res && res.data.code == 1) {
                 //修改vuex中的username
                 this.$store.dispatch("changeName", this.loginForm.username);
                 this.$message({

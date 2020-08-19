@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h5 class="header-tit">简单图书后台管理系统</h5>
+    <h6 class="header-tit">简单图书后台管理系统</h6>
     <div class="header-right">
       <!-- 图片 src="../../../assets/images/img.jpg" -->
       <img src="@/assets/images/img.jpg" alt="找不到了" />
@@ -178,7 +178,7 @@ export default {
       _this.$api.userApi
         .getUserByUsername(username)
         .then(res => {
-          if (res && res.data.code === 200) {
+          if (res && res.data.code === 1) {
             _this.userInfoForm = res.data.data;
             _this.userInfoVisible = true;
           }
@@ -192,7 +192,7 @@ export default {
       this.$api.userApi
         .updateUserPassword(uname, new_pwd)
         .then(res => {
-          if (res && res.data.code === 200) {
+          if (res && res.data.code === 1) {
             this.$message({
               type: "success",
               message: "更新密码成功！"
@@ -225,7 +225,7 @@ export default {
           _this.$api.loginApi
             .logout()
             .then(res => {
-              if (res && res.data.code === 200) {
+              if (res && res.data.code === 1) {
                 //提交store的clearUsername事件
                 _this.$store.dispatch("clearUsername", "");
                 _this.$store.dispatch("initMenuLists", []);
